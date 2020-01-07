@@ -1,0 +1,47 @@
+<header>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="logo" src="{{asset('img/Logo.png')}}" alt="logo" style="max-height: 7vh;">
+        </div>
+        <div class="col-md-4">
+            <h1 class="display-4 font-italic text-center text-light">Maquilleuse à Domicile</h1>
+        </div>
+        <div class="col-md-4">
+            <!-- Espace Connexion / Inscription -->
+            <button class="btn btn-light">
+                <a href="index.php/user/new">S'inscrire</a>
+            </button>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <button type="button" class="btn btn-primary"><a class="link  text-white" href="index.php/profile">
+                {{ app.user }}
+            </a></button>
+            <button type="button" class="btn btn-light"><a class="link" href="index.php/logout">Se deconnecter</a></button>
+            {% else %}
+            <button type="button" class="btn btn-light"><a class="link" href="index.php/login">Se Connecter</a></button>
+            {% endif %}  
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Qui suis-je ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mes Prestations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact RDV</a>
+                      </li>
+                    
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </div>
+</header>
